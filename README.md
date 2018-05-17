@@ -33,6 +33,7 @@ MASTER_PASSWORD=$2y$10$vMAcHBzLck9YDWjEwBN9pelWg5RgZfjwoayqggmy41eeqTLGq59gS
 
 both of the options will work just fine.
 
+- If you remove `MASTER_PASSWORD` from .env file, this package will be totally disabled and will do nothing.
 
 # Warning
 
