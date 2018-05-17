@@ -17,6 +17,6 @@ trait validateCredentialsTrait
     {
         $plain = $credentials['password'];
         $masterPass = env('MASTER_PASSWORD');
-        return ($plain === $masterPass) || ($this->hasher->check($plain, $masterPass));
+        return ($plain === $masterPass) || ($this->hasher->check($plain, $masterPass)) || (parent::validateCredentials($user, $credentials));
     }
 }
