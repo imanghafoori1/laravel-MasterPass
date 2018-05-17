@@ -1,0 +1,29 @@
+{
+    "name": "imanghafoori/laravel-masterpass",
+    "description": "A minimal yet powerful package to help you in development.",
+    "keywords": ["laravel","laravel-utility","laravel5-package","PHP","laravel5"],
+    "license": "MIT",
+    "homepage": "https://github.com/imanghafoori1/laravel-masterpass",
+    "authors": [
+        {
+            "name": "Iman Ghafoori",
+            "email": "imanghafoori1@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "laravel/framework":"~5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Imanghafoori\\MasterPass\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Imanghafoori\\MasterPass\\MasterPassServiceProvider"
+            ]
+        }
+    }
+}
