@@ -47,21 +47,24 @@ If you discover any security related issues, please email imanghafoori1@gmail.co
 As always if you found this package useful and you want to encourage us to maintain and work on it, Please press the star button to declare your willing.
 
 
+
+
+
 ### More packages from the author:
-
-
-- https://github.com/imanghafoori1/laravel-terminator
 
 A minimal yet powerful package to give you opportunity to refactor your controllers.
 
-======================
+- https://github.com/imanghafoori1/laravel-terminator
 
-- https://github.com/imanghafoori1/laravel-widgetize
+-------------
 
 A minimal yet powerful package to give a better structure and caching opportunity for your laravel apps.
 
-======================
+- https://github.com/imanghafoori1/laravel-widgetize
+
+------------
+
+It allows you login with any password in local environment only.
 
 - https://github.com/imanghafoori1/laravel-anypass
 
-It allows you login with any password in local environment only.
