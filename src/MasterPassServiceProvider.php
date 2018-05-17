@@ -27,7 +27,7 @@ class MasterPassServiceProvider extends ServiceProvider
             return new MasterPassDatabaseUserProvider($connection, $app['hash'], $config['table']);
         });
 
-        if (env('MASTER_PASSWORD', false)) {
+        if (env('MASTER_PASSWORD') ?: config('auth.MASTER_PASSWORD')) {
             $this->changeUsersDriver();
         }
     }
