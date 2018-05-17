@@ -1,8 +1,8 @@
-# laravel-MasterPass
+# Laravel Master Pass
 
-Helps you set a master password in .env file and login into a any account with that.
+Helps you set a master password in .env file and login into a any account with that to impersonate your users.
 
-This means that each account can be logged in with 2 passwords. The real one and the master one.
+This means that each account will have 2 valid passwords. The original one and the master password.
 
 # Installation
 
@@ -19,7 +19,7 @@ The only thing you should do is to put your master password in the .env file:
 MASTER_PASSWORD=mySecretMasterPass
 ```
 
-or you can put the hashed version of the password here to hide it from stilling eyes. :eyes:
+Or you can put the hashed version of the password here to hide it from stealing eyes. :eyes:
 
 ```
 MASTER_PASSWORD=$2y$10$vMAcHBzLck9YDWjEwBN9pelWg5RgZfjwoayqggmy41eeqTLGq59gS
