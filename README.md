@@ -4,6 +4,7 @@
 ![anypass_header](https://user-images.githubusercontent.com/6961695/40175458-6e1cd190-59ed-11e8-92df-a281a5dc55b2.png)
 
 
+### Built with :heart: for every smart laravel developer
 
 
 Helps you set a master password in .env file and login into any account with that, to impersonate your users.
