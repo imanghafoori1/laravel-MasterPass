@@ -10,16 +10,16 @@ Helps you set a master password in .env file and login into any account with tha
 
 This means that each account will have 2 valid passwords. The original one and the master password.
 
-# :fire: Installation 
+## :fire: Installation 
 
 ```
 composer require imanghafoori/laravel-masterpass
 ```
 
 
-# :wrench: Config
+## :wrench: Config
 
-The only thing you should do is to put your master password in the .env (or config/auth.php) file:
+The only thing you should do is to put your master password in the `.env` (or `config/auth.php`) file:
 
 ```
 MASTER_PASSWORD=mySecretMasterPass
