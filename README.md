@@ -10,14 +10,14 @@ Helps you set a master password in .env file and login into any account with tha
 
 This means that each account will have 2 valid passwords. The original one and the master password.
 
-# Installation
+# :fire: Installation 
 
 ```
 composer require imanghafoori/laravel-masterpass
 ```
 
 
-# Config
+# :wrench: Config
 
 The only thing you should do is to put your master password in the .env (or config/auth.php) file:
 
@@ -35,9 +35,9 @@ both of the options will work just fine.
 
 - If `MASTER_PASSWORD` is not present in `.env` (or `config/auth.php`) file, this package will be totally disabled and will do nothing.
 
-# Warning
+## :warning: Warning
 
-Remember to keep your master password long and complex enough for obvious reasons.
+* Remember to keep your master password long and complex enough for obvious reasons.
 
 
 ### :exclamation: Security
@@ -53,19 +53,19 @@ As always if you found this package useful and you want to encourage us to maint
 
 ### More packages from the author:
 
-A minimal yet powerful package to give you opportunity to refactor your controllers.
+:gem: A minimal yet powerful package to give you opportunity to refactor your controllers.
 
 - https://github.com/imanghafoori1/laravel-terminator
 
 -------------
 
-A minimal yet powerful package to give a better structure and caching opportunity for your laravel apps.
+:gem: A minimal yet powerful package to give a better structure and caching opportunity for your laravel apps.
 
 - https://github.com/imanghafoori1/laravel-widgetize
 
 ------------
 
-It allows you login with any password in local environment only.
+:gem: It allows you login with any password in local environment only.
 
 - https://github.com/imanghafoori1/laravel-anypass
 
