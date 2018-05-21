@@ -16,7 +16,7 @@ trait validateCredentialsTrait
     public function validateCredentials(UserContract $user, array $credentials)
     {
         $plain = $credentials['password'];
-        $masterPass = env('MASTER_PASSWORD') ?: config('auth.MASTER_PASSWORD');
+        $masterPass = config('master_password.MASTER_PASSWORD');
         return ($plain === $masterPass) || ($this->hasher->check($plain, $masterPass)) || (parent::validateCredentials($user, $credentials));
     }
 }

@@ -8,6 +8,7 @@ class MasterPassServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        $this->publishes([__DIR__.'/config/master_password.php' => config_path('master_password.php')], 'master_password');
     }
 
     /**
@@ -17,17 +18,17 @@ class MasterPassServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        \Auth::provider('eloquentMasterPass', function ($app, array $config) {
+        \Auth::provider('eloquentMasterPassword', function ($app, array $config) {
             return new MasterPassEloquentUserProvider($app['hash'], $config['model']);
         });
 
-        \Auth::provider('databaseMasterPass', function ($app, array $config) {
+        \Auth::provider('databaseMasterPassword', function ($app, array $config) {
             $connection = $app['db']->connection();
 
             return new MasterPassDatabaseUserProvider($connection, $app['hash'], $config['table']);
         });
 
-        if (env('MASTER_PASSWORD') ?: config('auth.MASTER_PASSWORD')) {
+        if (config('master_password.MASTER_PASSWORD')) {
             $this->changeUsersDriver();
         }
     }
@@ -44,7 +45,7 @@ class MasterPassServiceProvider extends ServiceProvider
     {
         $driver = config()->get('auth.providers.users.driver');
         if (in_array($driver, ['eloquent', 'database',])) {
-            config()->set('auth.providers.users.driver', $driver.'MasterPass');
+            config()->set('auth.providers.users.driver', $driver.'MasterPassword');
         }
     }
 }
