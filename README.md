@@ -17,10 +17,15 @@ This means that each account will have 2 valid passwords. The original one and t
 composer require imanghafoori/laravel-masterpass
 ```
 
+Then optionally:
+
+```
+php artisan vendor:publish --tag=master_password
+```
 
 ## :wrench: Config
 
-The only thing you should do is to put your master password in the `.env` (or `config/auth.php`) file:
+The only thing you should do is to put your master password in the `.env` (or `config/master_password.php`) file:
 
 ```
 MASTER_PASSWORD=mySecretMasterPass
@@ -34,7 +39,7 @@ MASTER_PASSWORD=$2y$10$vMAcHBzLck9YDWjEwBN9pelWg5RgZfjwoayqggmy41eeqTLGq59gS
 
 both of the options will work just fine.
 
-- If `MASTER_PASSWORD` is not present in `.env` (or `config/auth.php`) file, this package will be totally disabled and will do nothing.
+- If `MASTER_PASSWORD` is not present in `.env` (or `config/master_password.php`) file, this package will be totally disabled and will do nothing.
 
 ## :warning: Warning
 
