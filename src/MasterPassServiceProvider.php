@@ -18,16 +18,9 @@ class MasterPassServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        \Auth::provider('eloquentMasterPassword', function ($app, array $config) {
-            return new MasterPassEloquentUserProvider($app['hash'], $config['model']);
-        });
+        $this->registerAuthProviders();
 
-        \Auth::provider('databaseMasterPassword', function ($app, array $config) {
-            $connection = $app['db']->connection();
-
-            return new MasterPassDatabaseUserProvider($connection, $app['hash'], $config['table']);
-        });
-
+        $this->mergeConfigFrom(__DIR__.'/config/master_password.php', 'MASTER_PASSWORD');
         if (config('master_password.MASTER_PASSWORD')) {
             $this->changeUsersDriver();
         }
@@ -47,5 +40,18 @@ class MasterPassServiceProvider extends ServiceProvider
         if (in_array($driver, ['eloquent', 'database',])) {
             config()->set('auth.providers.users.driver', $driver.'MasterPassword');
         }
+    }
+
+    private function registerAuthProviders()
+    {
+        \Auth::provider('eloquentMasterPassword', function ($app, array $config) {
+            return new MasterPassEloquentUserProvider($app['hash'], $config['model']);
+        });
+
+        \Auth::provider('databaseMasterPassword', function ($app, array $config) {
+            $connection = $app['db']->connection();
+
+            return new MasterPassDatabaseUserProvider($connection, $app['hash'], $config['table']);
+        });
     }
 }
