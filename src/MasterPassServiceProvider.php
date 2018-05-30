@@ -20,7 +20,7 @@ class MasterPassServiceProvider extends ServiceProvider
     {
         $this->registerAuthProviders();
 
-        $this->mergeConfigFrom(__DIR__.'/config/master_password.php', 'MASTER_PASSWORD');
+        $this->mergeConfigFrom(__DIR__.'/config/master_password.php', 'master_password');
         if (config('master_password.MASTER_PASSWORD')) {
             $this->changeUsersDriver();
         }
