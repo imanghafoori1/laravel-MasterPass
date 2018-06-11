@@ -7,6 +7,7 @@
 [![Latest Stable Version](https://poser.pugx.org/imanghafoori/laravel-MasterPass/v/stable)](https://packagist.org/packages/imanghafoori/laravel-MasterPass)
 <a href="https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass"><img src="https://img.shields.io/scrutinizer/g/imanghafoori1/laravel-MasterPass.svg?style=flat-square" alt="Quality Score"></img></a>
 [![Build Status](https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass/badges/build.png?b=master)](https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass/build-status/master)
+[![Total Downloads](https://poser.pugx.org/imanghafoori/laravel-MasterPass/downloads)](https://packagist.org/packages/imanghafoori/laravel-MasterPass)
 
 ### Built with :heart: for every smart laravel developer
 
