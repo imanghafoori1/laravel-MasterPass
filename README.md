@@ -80,3 +80,11 @@ As always if you found this package useful and you want to encourage us to maint
 
 - https://github.com/imanghafoori1/laravel-anypass
 
+
+------------
+
+:gem: Authorization and ACL is now very easy with hey-man package !!!
+
+- https://github.com/imanghafoori1/laravel-heyman
+
+
