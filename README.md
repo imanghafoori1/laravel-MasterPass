@@ -25,7 +25,7 @@ This can also help you while you are developing and for testing reasons you want
 composer require imanghafoori/laravel-masterpass
 ```
 
-Then optionally:
+Then, do not forget to run:
 
 ```
 php artisan vendor:publish --tag=master_password
