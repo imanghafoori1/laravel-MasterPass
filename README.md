@@ -16,6 +16,9 @@ Helps you set a master password in .env file and login into any account with tha
 
 This means that each account will have 2 valid passwords. The original one and the master password.
 
+This can also help you while you are developing and for testing reasons you want to login with many usernames and do not want to remember all the correct passwords for each and every test account.
+
+
 ## :fire: Installation 
 
 ```
@@ -42,9 +45,9 @@ Or you can put the hashed version of the password here to hide it from stealing 
 MASTER_PASSWORD=$2y$10$vMAcHBzLck9YDWjEwBN9pelWg5RgZfjwoayqggmy41eeqTLGq59gS
 ```
 
-both of the options will work just fine.
+Both of the options will work just fine.
 
-- If `MASTER_PASSWORD` is not present in `.env` (or `config/master_password.php`) file, this package will be totally disabled and will do nothing.
+- If master password can't be read from the `config/master_password.php` file, this package will be totally disabled and will do nothing.
 
 ## :warning: Warning
 
@@ -56,7 +59,8 @@ If you discover any security related issues, please email imanghafoori1@gmail.co
 
 
 ### :star: Your Stars Make Us Do More :star:
-As always if you found this package useful and you want to encourage us to maintain and work on it, Please press the star button to declare your willing.
+
+As always if you found this package useful and you want to encourage us to maintain and work on it, Please `press the star button` to declare your willing.
 
 
 
