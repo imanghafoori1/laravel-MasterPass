@@ -8,7 +8,7 @@
 <a href="https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass"><img src="https://img.shields.io/scrutinizer/g/imanghafoori1/laravel-MasterPass.svg?style=flat-square" alt="Quality Score"></img></a>
 [![Build Status](https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass/badges/build.png?b=master)](https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass/build-status/master)
 [![Total Downloads](https://poser.pugx.org/imanghafoori/laravel-MasterPass/downloads)](https://packagist.org/packages/imanghafoori/laravel-MasterPass)
-[![StyleCI](https://github.styleci.io/repos/133695108/shield?branch=master)]
+[![StyleCI](https://github.styleci.io/repos/133695108/shield?branch=master)](https://github.styleci.io/repos/133695108)
 
 ### Built with :heart: for every smart laravel developer
 
