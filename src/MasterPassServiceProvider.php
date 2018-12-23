@@ -30,14 +30,14 @@ class MasterPassServiceProvider extends ServiceProvider
      * If the users driver is set to eloquent or database
      * it changes to 'eloquent' to eloquentMasterPass and
      * 'database' to databaseMasterPass,
-     *  otherwise it does nothing
+     *  otherwise it does nothing.
      *
      * @return null
      */
     private function changeUsersDriver()
     {
         $driver = config()->get('auth.providers.users.driver');
-        if (in_array($driver, ['eloquent', 'database',])) {
+        if (in_array($driver, ['eloquent', 'database'])) {
             config()->set('auth.providers.users.driver', $driver.'MasterPassword');
         }
     }
