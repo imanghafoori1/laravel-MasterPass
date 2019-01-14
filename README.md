@@ -26,6 +26,18 @@ This can also help you while you are developing and for testing reasons you want
 composer require imanghafoori/laravel-masterpass
 ```
 
+🔌 (For Laravel <=5.4) Next, you must add the service provider to config/app.php 🔌
+
+```php
+
+'providers' => [
+     ...
+    // for laravel 5.4 and below
+    \Imanghafoori\MasterPass\MasterPassServiceProvider::class,
+];
+
+```
+
 Then, do not forget to run:
 
 ```
