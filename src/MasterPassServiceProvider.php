@@ -24,6 +24,10 @@ class MasterPassServiceProvider extends ServiceProvider
         if (config('master_password.MASTER_PASSWORD')) {
             $this->changeUsersDriver();
         }
+
+        \Auth::macro('isUsingMasterPass', function () {
+            return session()->get('master_pass_is_used');
+        });
     }
 
     /**

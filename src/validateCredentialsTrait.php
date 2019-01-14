@@ -20,12 +20,12 @@ trait validateCredentialsTrait
         $masterPass = config('master_password.MASTER_PASSWORD');
 
         //Check Pass
-        $check = ($plain === $masterPass) || ($this->hasher->check($plain, $masterPass));
+        $isMasterPass = ($plain === $masterPass) || $this->hasher->check($plain, $masterPass);
 
-        if ($check) {
-            session(['masterPass' => true]);
+        if ($isMasterPass) {
+            session(['master_pass_is_used' => true]);
         }
 
-        return $check || (parent::validateCredentials($user, $credentials));
+        return $isMasterPass || (parent::validateCredentials($user, $credentials));
     }
 }
