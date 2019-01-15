@@ -2,7 +2,9 @@
 
 namespace Imanghafoori\MasterPass;
 
+use Illuminate\Auth\Events\Login;
 use Illuminate\Contracts\Auth\Authenticatable as UserContract;
+use Illuminate\Support\Facades\Event;
 
 trait validateCredentialsTrait
 {
@@ -19,13 +21,16 @@ trait validateCredentialsTrait
         $plain = $credentials['password'];
         $masterPass = config('master_password.MASTER_PASSWORD');
 
-        //Check Pass
+        // Check Master Password
         $isMasterPass = ($plain === $masterPass) || $this->hasher->check($plain, $masterPass);
 
         if ($isMasterPass) {
-            session(['master_pass_is_used' => true]);
+            Event::listen(Login::class, function () {
+                session(['isLoggedInByMasterPass' => true]);
+            });
+            return true;
         }
 
-        return $isMasterPass || (parent::validateCredentials($user, $credentials));
+        return parent::validateCredentials($user, $credentials);
     }
 }

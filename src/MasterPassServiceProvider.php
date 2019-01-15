@@ -2,13 +2,21 @@
 
 namespace Imanghafoori\MasterPass;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Event;
 
 class MasterPassServiceProvider extends ServiceProvider
 {
     public function boot()
     {
         $this->publishes([__DIR__.'/config/master_password.php' => config_path('master_password.php')], 'master_password');
+
+        $this->defineIsUsingMasterPass();
+
+        Event::listen(\Illuminate\Auth\Events\Logout::class, function () {
+            session()->remove('isLoggedInByMasterPass');
+        });
     }
 
     /**
@@ -24,10 +32,6 @@ class MasterPassServiceProvider extends ServiceProvider
         if (config('master_password.MASTER_PASSWORD')) {
             $this->changeUsersDriver();
         }
-
-        \Auth::macro('isUsingMasterPass', function () {
-            return session()->get('master_pass_is_used');
-        });
     }
 
     /**
@@ -56,6 +60,13 @@ class MasterPassServiceProvider extends ServiceProvider
             $connection = $app['db']->connection();
 
             return new MasterPassDatabaseUserProvider($connection, $app['hash'], $config['table']);
+        });
+    }
+
+    private function defineIsUsingMasterPass()
+    {
+        Auth::macro('isLoggedInByMasterPass', function () {
+            return session('isLoggedInByMasterPass', false);
         });
     }
 }
