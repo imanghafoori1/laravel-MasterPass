@@ -3,8 +3,8 @@
 namespace Imanghafoori\MasterPass;
 
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\ServiceProvider;
 
 class MasterPassServiceProvider extends ServiceProvider
 {
