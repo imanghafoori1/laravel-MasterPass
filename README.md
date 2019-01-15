@@ -62,6 +62,15 @@ Both of the options will work just fine.
 
 - If master password can't be read from the `config/master_password.php` file, this package will be totally disabled and will do nothing.
 
+
+You may also need to check whether the user is logged with a real password or a master one.
+
+```php
+
+$bool = Auth::isLoggedInByMasterPass();
+
+```
+
 ## :warning: Warning
 
 * Remember to keep your master password long and complex enough for obvious reasons.
