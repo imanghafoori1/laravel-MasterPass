@@ -1,4 +1,4 @@
-# Laravel Master Pass
+# :key: Laravel Master Pass 
 
 
 ![anypass_header](https://user-images.githubusercontent.com/6961695/40175458-6e1cd190-59ed-11e8-92df-a281a5dc55b2.png)
