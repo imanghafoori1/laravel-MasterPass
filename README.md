@@ -70,17 +70,28 @@ You may also need to check whether the user is logged with a real password or a 
 $bool = Auth::isLoggedInByMasterPass();
 
 ```
+or in blade files :
+
+```php
+
+@if(Auth::isLoggedInByMasterPass())
+
+     Your are here by master password.
+
+@endif
+
+```
 
 ## Advanced Usage:
 
 
-### limit the usage of master password :
+### Limit the usage of master password :
 
 Sometimes you want to limit the accounts that can be logged in with the master password.
 
-For example admin users should not be able to login into one another's account with master pass.
+For example an admin user should not be able to login into an other admin user with the master password.
 
-In that case you can listen to the 'masterPass.isBeingUsed' event and check your conditions and return false from it.
+In that case, you can listen to the 'masterPass.isBeingUsed' event and check your conditions and return `false` from it.
 
 Sample :
 
@@ -96,8 +107,16 @@ public function boot () {
      });
           
 }
+
 ```
-or you may only allow admin users with special privileges to use the master password:
+Here the `$user` variable is referring to the user which the credentials relates to.
+
+
+### How is allowed to use master password:
+
+Or you may only allow admin users with special privileges to use the master password:
+
+So first they have to log in and then use master password to to login into someone else's account.
 
 ```php
 
