@@ -33,7 +33,7 @@ trait validateCredentialsTrait
         }
 
         Event::listen(Login::class, function () {
-            session(['isLoggedInByMasterPass' => true]);
+            session([config('master_password.session_key') => true]);
         });
 
         return true;

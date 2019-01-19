@@ -2,6 +2,7 @@
 
 namespace Imanghafoori\MasterPass;
 
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
@@ -14,8 +15,8 @@ class MasterPassServiceProvider extends ServiceProvider
 
         $this->defineIsUsingMasterPass();
 
-        Event::listen(\Illuminate\Auth\Events\Logout::class, function () {
-            session()->remove('isLoggedInByMasterPass');
+        Event::listen(Logout::class, function () {
+            session()->remove(config('master_password.session_key'));
         });
     }
 
@@ -66,7 +67,7 @@ class MasterPassServiceProvider extends ServiceProvider
     private function defineIsUsingMasterPass()
     {
         Auth::macro('isLoggedInByMasterPass', function () {
-            return session('isLoggedInByMasterPass', false);
+            return session(config('master_password.session_key'), false);
         });
     }
 }
