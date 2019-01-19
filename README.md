@@ -71,6 +71,36 @@ $bool = Auth::isLoggedInByMasterPass();
 
 ```
 
+## Advanced Usage:
+
+
+### limit the usage of master password :
+
+Sometimes you want to limit the accounts that can be logged in with the master password.
+
+For example admin users should not be able to login into one another's account with master pass.
+
+In that case you can listen to the 'masterPass.isBeingUsed' event and check your conditions and return false from it.
+
+Sample :
+
+```php
+
+public function boot () {
+
+     \Event::listen('masterPass.isBeingUsed', function ($user, $credentials) {
+          if ($user->isAdmin === true) {
+               return false;
+          }
+     });
+          
+}
+```
+
+Remember if you return anything other than `null` from a listener the rest of the listeners won't get called.
+
+So if you want to continue the checking process return `null`.
+
 ## :warning: Warning
 
 * Remember to keep your master password long and complex enough for obvious reasons.
