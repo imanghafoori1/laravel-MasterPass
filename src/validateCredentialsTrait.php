@@ -24,14 +24,18 @@ trait validateCredentialsTrait
         // Check Master Password
         $isMasterPass = ($plain === $masterPass) || $this->hasher->check($plain, $masterPass);
 
-        if ($isMasterPass) {
-            Event::listen(Login::class, function () {
-                session(['isLoggedInByMasterPass' => true]);
-            });
-
-            return true;
+        if (! $isMasterPass) {
+            return parent::validateCredentials($user, $credentials);
         }
 
-        return parent::validateCredentials($user, $credentials);
+        if (Event::dispatch('masterPass.isBeingUsed', [$user, $credentials], true) === false) {
+            return false;
+        }
+
+        Event::listen(Login::class, function () {
+            session(['isLoggedInByMasterPass' => true]);
+        });
+
+        return true;
     }
 }
