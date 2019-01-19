@@ -97,6 +97,32 @@ public function boot () {
           
 }
 ```
+or you may only allow admin users with special privilidges to use the master password:
+
+```php
+
+public function boot () {
+
+     // This will authorize the user before he can login into an account with master pass.
+     \Event::listen('masterPass.isBeingUsed', function () {
+     
+          $currentUser = \Auth::user();
+          
+          // guest user can not use master pass, even they know it.
+          if (is_null($currentUser)) {
+               return false;
+          }
+          
+          // only logged in users with special permission can login with master pass.
+          if (! $currentUser->canUseMasterPass) {
+               return false;
+          }
+
+     });
+          
+}
+```
+
 
 Remember if you return anything other than `null` from a listener the rest of the listeners won't get called.
 
