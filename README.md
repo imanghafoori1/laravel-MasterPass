@@ -88,6 +88,7 @@ Sample :
 
 public function boot () {
 
+     // This will prevent someone login to an admin account with master password.
      \Event::listen('masterPass.isBeingUsed', function ($user, $credentials) {
           if ($user->isAdmin === true) {
                return false;
