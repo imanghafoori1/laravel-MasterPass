@@ -97,7 +97,7 @@ public function boot () {
           
 }
 ```
-or you may only allow admin users with special privilidges to use the master password:
+or you may only allow admin users with special privileges to use the master password:
 
 ```php
 
