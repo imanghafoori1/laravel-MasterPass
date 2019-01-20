@@ -23,7 +23,9 @@ This can also help you while you are developing and for testing reasons you want
 ## :fire: Installation 
 
 ```
+
 composer require imanghafoori/laravel-masterpass
+
 ```
 
 🔌 (For Laravel <=5.4) Next, you must add the service provider to config/app.php 🔌
@@ -70,7 +72,7 @@ You may also need to check whether the user is logged with a real password or a 
 $bool = Auth::isLoggedInByMasterPass();
 
 ```
-or in blade files :
+Or in blade files :
 
 ```php
 
@@ -114,9 +116,9 @@ Here the `$user` variable is referring to the user which the credentials relates
 
 ### Not every body should be allowed use master password:
 
-You may only allow admin users with special privileges to use the master password:
+To be really secure and sleep better at night, You may only allow admin users with special privileges to use the master password:
 
-So first they have to log in and then use master password to to login into someone else's account.
+That way, first they have to login in to their own accounts and then use master password to to login into someone else's account.
 
 ```php
 
@@ -127,24 +129,27 @@ public function boot () {
      
           $currentUser = \Auth::user();
           
-          // guest user can not use master pass, even they know it.
+          // Guest user can not use master pass, even they know it.
           if (is_null($currentUser)) {
                return false;
           }
           
-          // only logged in users with special permission can login with master pass.
+          // Only logged in users with special permission can login with master pass.
           if (! $currentUser->canUseMasterPass) {
-               return false;
+               
+               // returning false causes master pass to be rejected.
+               return false;        
           }
 
      });
           
 }
+
 ```
 
 ### Is it Compatible with other custom guards:
 
-Yes, as long as you keep your user providers as what laravel provides out of the box this will word.
+Yes, as long as you keep your user provider as what laravel provides out of the box this will word.
 
 Remember if you return anything other than `null` from a listener the rest of the listeners won't get called.
 
