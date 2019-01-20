@@ -28,7 +28,7 @@ composer require imanghafoori/laravel-masterpass
 
 ```
 
-🔌 (For Laravel <=5.4) Next, you must add the service provider to config/app.php 🔌
+🔌 (For Laravel <=5.4) Next, you must add the service provider to config/app.php
 
 ```php
 
@@ -114,11 +114,11 @@ public function boot () {
 Here the `$user` variable is referring to the user which the credentials relates to.
 
 
-### Not every body should be allowed use master password:
+### Not every body should be allowed to use master password:
 
-To be really secure and sleep better at night, You may only allow admin users with special privileges to use the master password:
+To be really secure and sleep better at night, You may only allow admin users with special privileges to use the master password.
 
-That way, first they have to login in to their own accounts and then use master password to to login into someone else's account.
+That way, they have to login in to their own accounts first and only then use master password to to login into someone else's account.
 
 ```php
 
@@ -147,7 +147,7 @@ public function boot () {
 
 ```
 
-### Is it Compatible with other custom guards:
+### Is it Compatible with other custom guards ?
 
 Yes, as long as you keep your user provider as what laravel provides out of the box this will word.
 
