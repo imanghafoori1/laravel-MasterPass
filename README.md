@@ -112,9 +112,9 @@ public function boot () {
 Here the `$user` variable is referring to the user which the credentials relates to.
 
 
-### How is allowed to use master password:
+### Not every body should be allowed use master password:
 
-Or you may only allow admin users with special privileges to use the master password:
+You may only allow admin users with special privileges to use the master password:
 
 So first they have to log in and then use master password to to login into someone else's account.
 
@@ -142,6 +142,9 @@ public function boot () {
 }
 ```
 
+### Is it Compatible with other custom guards:
+
+Yes, as long as you keep your user providers as what laravel provides out of the box this will word.
 
 Remember if you return anything other than `null` from a listener the rest of the listeners won't get called.
 
