@@ -86,6 +86,18 @@ Or in blade files :
 
 ## Advanced Usage:
 
+### Provide the master pass from a custom source :
+
+If you want to store your master password in the database and not in the config or .env file then :
+
+```php
+
+\Event::listen('masterPass.whatIsIt', function ($user, $credentials) {
+          // You can query database from here.
+          return 'master password from db';
+     });
+
+```
 
 ### Limit the usage of master password :
 
