@@ -3,8 +3,8 @@
 namespace Imanghafoori\MasterPass;
 
 use Illuminate\Auth\Events\Login;
-use Illuminate\Contracts\Auth\Authenticatable as UserContract;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Contracts\Auth\Authenticatable as UserContract;
 
 trait validateCredentialsTrait
 {
