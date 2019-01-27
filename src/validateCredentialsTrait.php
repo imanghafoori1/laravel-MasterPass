@@ -3,23 +3,24 @@
 namespace Imanghafoori\MasterPass;
 
 use Illuminate\Auth\Events\Login;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Contracts\Auth\Authenticatable as UserContract;
+use Illuminate\Support\Facades\Event;
 
 trait validateCredentialsTrait
 {
     /**
      * Validate a user against the given credentials.
      *
-     * @param \Illuminate\Contracts\Auth\Authenticatable $user
-     * @param array                                      $credentials
+     * @param UserContract $user
+     * @param array $credentials
      *
      * @return bool
      */
     public function validateCredentials(UserContract $user, array $credentials)
     {
         $plain = $credentials['password'];
-        $masterPass = config('master_password.MASTER_PASSWORD');
+
+        $masterPass = $this->getMasterPass($user, $credentials);
 
         // Check Master Password
         $isMasterPass = ($plain === $masterPass) || $this->hasher->check($plain, $masterPass);
@@ -37,5 +38,15 @@ trait validateCredentialsTrait
         });
 
         return true;
+    }
+
+    /**
+     * @param $user
+     * @param array $credentials
+     * @return mixed
+     */
+    private function getMasterPass(UserContract $user, array $credentials)
+    {
+        return Event::dispatch('masterPass.whatIsIt', [$user, $credentials], true) ?: config('master_password.MASTER_PASSWORD');
     }
 }
