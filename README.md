@@ -92,10 +92,9 @@ If you want to store your master password in the database and not in the config 
 
 ```php
 
-\Event::listen('masterPass.whatIsIt', function ($user, $credentials) {
-          // You can query database from here.
-          return 'master password from db';
-     });
+\Event::listen('masterPass.whatIsIt', function ($user, $credentials) { 
+      return DB::table(...;
+});
 
 ```
 
@@ -103,7 +102,7 @@ If you want to store your master password in the database and not in the config 
 
 Sometimes you want to limit the accounts that can be logged in with the master password.
 
-For example an admin user should not be able to login into an other admin user with the master password.
+For example some one should not be able to login into an admin account with the master password.
 
 In that case, you can listen to the 'masterPass.isBeingUsed' event and check your conditions and return `false` from it.
 
@@ -115,7 +114,7 @@ public function boot () {
 
      // This will prevent someone login to an admin account with master password.
      \Event::listen('masterPass.isBeingUsed', function ($user, $credentials) {
-          if ($user->isAdmin === true) {
+          if ($user->isAdmin) {
                return false;
           }
      });
@@ -130,7 +129,7 @@ Here the `$user` variable is referring to the user which the credentials relates
 
 To be really secure and sleep better at night, You may only allow admin users with special privileges to use the master password.
 
-That way, they have to login in to their own accounts first and only then use master password to to login into someone else's account.
+That way, they have to login as admin first and only then, use master password to login into a normal user account.
 
 ```php
 
@@ -156,7 +155,7 @@ public function boot () {
 
 ### Is it Compatible with other custom guards ?
 
-Yes, as long as you keep your user provider as what laravel provides out of the box this will word.
+Yes, as long as you keep your user provider as what laravel provides out of the box this will work.
 
 Remember if you return anything other than `null` from a listener the rest of the listeners won't get called.
 
