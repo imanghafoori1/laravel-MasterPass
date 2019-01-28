@@ -141,14 +141,9 @@ public function boot () {
      
           $currentUser = \Auth::user();
           
-          // Guest user can not use master pass, even they know it.
-          if (is_null($currentUser)) {
-               return false;
-          }
+          // Only logged in users with special permission can use master pass.
           
-          // Only logged in users with special permission can login with master pass.
-          if (! $currentUser->canUseMasterPass) {
-               
+          if (is_null($currentUser) or ! $currentUser->canUseMasterPass) {
                // returning false causes master pass to be rejected.
                return false;        
           }
