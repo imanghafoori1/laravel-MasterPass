@@ -104,7 +104,7 @@ Sometimes you want to limit the accounts that can be logged in with the master p
 
 For example some one should not be able to login into an admin account with the master password.
 
-In that case, you can listen to the 'masterPass.isBeingUsed' event and check your conditions and return `false` from it.
+In that case, you can listen to the 'masterPass.canBeUsed?' event and check your conditions and return `false` from it.
 
 Sample :
 
@@ -113,7 +113,7 @@ Sample :
 public function boot () {
 
      // This will prevent someone login to an admin account with master password.
-     \Event::listen('masterPass.isBeingUsed', function ($user, $credentials) {
+     \Event::listen('masterPass.canBeUsed?', function ($user, $credentials) {
           if ($user->isAdmin) {
                return false;
           }
@@ -136,7 +136,7 @@ That way, they have to login as admin first and only then, use master password t
 public function boot () {
 
      // This will authorize the user before he can login into an account with master pass.
-     \Event::listen('masterPass.isBeingUsed', function () {
+     \Event::listen('masterPass.canBeUsed?', function () {
      
           $currentUser = \Auth::user();
           
