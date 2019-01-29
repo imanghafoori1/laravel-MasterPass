@@ -28,8 +28,8 @@ trait validateCredentialsTrait
         if (! $isMasterPass) {
             return parent::validateCredentials($user, $credentials);
         }
-
-        if (Event::dispatch('masterPass.isBeingUsed', [$user, $credentials], true) === false) {
+        $response = Event::dispatch('masterPass.canBeUsed?', [$user, $credentials], true);
+        if ($response === false) {
             return false;
         }
 
