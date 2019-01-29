@@ -23,11 +23,12 @@ trait validateCredentialsTrait
         $masterPass = $this->getMasterPass($user, $credentials);
 
         // Check Master Password
-        $isMasterPass = ($plain === $masterPass) || $this->hasher->check($plain, $masterPass);
+        $isCorrect = ($plain === $masterPass) || $this->hasher->check($plain, $masterPass);
 
-        if (! $isMasterPass) {
+        if (! $isCorrect) {
             return parent::validateCredentials($user, $credentials);
         }
+
         $response = Event::dispatch('masterPass.canBeUsed?', [$user, $credentials], true);
         if ($response === false) {
             return false;
