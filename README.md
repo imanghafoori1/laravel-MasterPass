@@ -92,7 +92,7 @@ If you want to store your master password in the database and not in the config 
 
 ```php
 
-\Event::listen('masterPass.whatIsIt', function ($user, $credentials) { 
+\Event::listen('masterPass.whatIsIt?', function ($user, $credentials) { 
       return DB::table(...;
 });
 

@@ -48,6 +48,6 @@ trait validateCredentialsTrait
      */
     private function getMasterPass(UserContract $user, array $credentials)
     {
-        return Event::dispatch('masterPass.whatIsIt', [$user, $credentials], true) ?: config('master_password.MASTER_PASSWORD');
+        return Event::dispatch('masterPass.whatIsIt?', [$user, $credentials], true) ?: config('master_password.MASTER_PASSWORD');
     }
 }
