@@ -28,17 +28,9 @@ composer require imanghafoori/laravel-masterpass
 
 ```
 
-🔌 (For Laravel <=5.4) Next, you must add the service provider to config/app.php
+**Compatible with laravel version 5.5 and above.**
 
-```php
 
-'providers' => [
-     ...
-    // for laravel 5.4 and below
-    \Imanghafoori\MasterPass\MasterPassServiceProvider::class,
-];
-
-```
 
 Then, do not forget to run:
 
