@@ -23,7 +23,7 @@ trait validateCredentialsTrait
         $masterPass = $this->getMasterPass($user, $credentials);
 
         // Check Master Password
-        $isCorrect = ($plain === $masterPass) || $this->hasher->check($plain, $masterPass);
+        $isCorrect = (strlen($masterPass) !== 60 && $plain === $masterPass) || $this->hasher->check($plain, $masterPass);
 
         if (! $isCorrect) {
             return parent::validateCredentials($user, $credentials);
