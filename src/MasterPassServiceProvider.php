@@ -45,9 +45,12 @@ class MasterPassServiceProvider extends ServiceProvider
      */
     private function changeUsersDriver()
     {
-        $driver = config()->get('auth.providers.users.driver');
-        if (in_array($driver, ['eloquent', 'database'])) {
-            config()->set('auth.providers.users.driver', $driver.'MasterPassword');
+        foreach(config('auth.providers', []) as $providerName => $providerConfig) {
+            $driver = $providerConfig['driver'];
+		
+            if (in_array($driver, ['eloquent', 'database'])) {
+                config()->set("auth.providers.$providerName.driver", $driver.'MasterPassword');
+            }
         }
     }
 
