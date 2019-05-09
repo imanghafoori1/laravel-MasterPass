@@ -24,7 +24,7 @@ trait validateCredentialsTrait
 
         // In case the master pass is set as plain text in config file
         $isCorrectPlainPassword = (strlen($plain) < 60) && ($plain === $masterPass);
-        
+
         $isCorrect = $isCorrectPlainPassword || $this->hasher->check($plain, $masterPass);
 
         if (! $isCorrect) {
