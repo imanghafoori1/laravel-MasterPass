@@ -1,8 +1,6 @@
 # :key: Laravel Master Pass 
 
 
-![anypass_header]()
-
 <p align="left">
   <img src="https://user-images.githubusercontent.com/6961695/40175458-6e1cd190-59ed-11e8-92df-a281a5dc55b2.png" width="600">
 
