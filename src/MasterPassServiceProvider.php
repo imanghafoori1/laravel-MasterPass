@@ -27,6 +27,7 @@ class MasterPassServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind("Laravel\Passport\Bridge\UserRepository", PassportUserRepository::class);
         $this->registerAuthProviders();
 
         $this->mergeConfigFrom(__DIR__.'/config/master_password.php', 'master_password');
