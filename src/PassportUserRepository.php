@@ -6,7 +6,6 @@ use RuntimeException;
 use Illuminate\Support\Facades\Event;
 use Laravel\Passport\Bridge\UserRepository;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
-use League\OAuth2\Server\Repositories\UserRepositoryInterface;
 use Illuminate\Contracts\Auth\Authenticatable as UserContract;
 
 class PassportUserRepository extends UserRepository
