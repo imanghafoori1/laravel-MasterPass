@@ -12,6 +12,8 @@
 [![Donate Bitcoin](https://img.shields.io/badge/donate-$1-orange.svg)](https://blockchain.com/btc/payment_request?address=1MTPGWkNfBtT8mTith1Rf91MS4kucUX4c1&amount=0.00011451&message=masterpass_donation&name=Iman)
 
 
+
+
 ### Built with :heart: for every smart laravel developer
 
 
@@ -21,6 +23,7 @@ This means that each account will have 2 valid passwords. The original one and t
 
 This can also help you while you are developing and for testing reasons you want to login with many usernames and do not want to remember all the correct passwords for each and every test account.
 
+- Also works if you use laravel-passport (as of version 2.0.6 and above)
 
 ## :fire: Installation 
 
