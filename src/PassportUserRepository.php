@@ -3,6 +3,7 @@
 namespace Imanghafoori\MasterPass;
 
 use RuntimeException;
+use Laravel\Passport\Bridge\User;
 use Illuminate\Support\Facades\Event;
 use Laravel\Passport\Bridge\UserRepository;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
