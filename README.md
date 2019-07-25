@@ -1,4 +1,4 @@
-# :key: Laravel Master Pass 
+# :key: Build Smart Login forms in minutes !!!
 
 
 <p align="left">
@@ -82,9 +82,9 @@ Or in blade files :
 
 ## Advanced Usage:
 
-### Provide the master pass from a custom source :
+### What if I want to put master password in the database ? (not .env)
 
-If you want to store your master password in the database and not in the config or .env file then :
+If you want to store your master password in the database or anywhere else :
 
 ```php
 
