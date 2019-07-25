@@ -96,11 +96,16 @@ If you want to store your master password in the database or anywhere else :
 
 ```
 
-### Limit the usage of master password :
+### Super admin accounts should not be opened by master password, right?
 
-Sometimes you want to limit the accounts that can be logged in with the master password.
+You want to support team to login into users accounts by master password. BUT
 
-For example some one should not be able to login into an admin account with the master password.
+you do not want them to login to super admin account by the same master password.
+
+In other words, you want the admin account to have only one valid password, not two.
+master password is only for normal user accounts.
+
+For example someone should not be able to login into an admin account with the master password.
 
 In that case, you can listen to the 'masterPass.canBeUsed?' event and check your conditions and return `false` from it.
 
