@@ -89,7 +89,9 @@ If you want to store your master password in the database and not in the config 
 ```php
 
 \Event::listen('masterPass.whatIsIt?', function ($user, $credentials) { 
-      return DB::table(...;
+     $row = DB::table('master_passwords')->first();
+      
+     return $row->password;
 });
 
 ```
