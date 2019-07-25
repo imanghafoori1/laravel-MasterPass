@@ -123,9 +123,9 @@ public function boot () {
 Here the `$user` variable is referring to the user which the credentials relates to.
 
 
-### Not every body should be allowed to use master password:
+### Not everyone in the room, should be able to use master password, Even if he/she knows it !!!
 
-To be really secure and sleep better at night, You may only allow admin users with special privileges to use the master password.
+To be really secure and sleep better at night, let's say you only allow users with special privileges to use the master password.
 
 That way, they have to login as admin first and only then, use master password to login into a normal user account.
 
@@ -137,11 +137,11 @@ public function boot () {
      \Event::listen('masterPass.canBeUsed?', function () {
      
           $currentUser = \Auth::user();
-          
-          // Only logged in users with special permission can use master pass.
+          // for example let's say :
+          // Only logged in users with special permission can use master password.
           
           if (is_null($currentUser) or ! $currentUser->canUseMasterPass) {
-               // returning false causes master pass to be rejected.
+            // returning false causes the correct master pass to be rejected.
                return false;        
           }
 
@@ -151,6 +151,8 @@ public function boot () {
 
 ```
 
+So you may shout the master password in the room, but they can not use it if you not give them the permission to do so.
+
 ### Is it Compatible with other custom guards ?
 
 Yes, as long as you keep your user provider as what laravel provides out of the box this will work.
@@ -158,6 +160,8 @@ Yes, as long as you keep your user provider as what laravel provides out of the 
 Remember if you return anything other than `null` from a listener the rest of the listeners won't get called.
 
 So if you want to continue the checking process return `null`.
+
+Support for laravel-passport is also added.
 
 ## :warning: Warning
 
@@ -167,9 +171,6 @@ So if you want to continue the checking process return `null`.
 ### :star: Your Stars Make Us Do More :star:
 
 As always if you found this package useful and you want to encourage us to maintain and work on it, Please `press the star button` to declare your willing.
-
-
-
 
 
 ### More packages from the author:
@@ -186,21 +187,13 @@ As always if you found this package useful and you want to encourage us to maint
 
 ------------
 
-:gem: It allows you login with any password in local environment only.
+:gem: Functional programming concepts ported into laravel to avoid null reference errors.
 
-- https://github.com/imanghafoori1/laravel-anypass
-
+- https://github.com/imanghafoori1/laravel-nullable
 
 ------------
 
-:gem: Authorization and ACL is now very easy with hey-man package !!!
+:gem: Authorization and validation is now very easy with hey-man package !!!
 
 - https://github.com/imanghafoori1/laravel-heyman
 
-
-## Donate me a Dollar
-
-If you think my work has saved you time and money, please donate me `1 dollar` 
-since it's better than donating 0 dollars. ;)
-
-[![Donate Bitcoin](https://img.shields.io/badge/donate-$1-orange.svg)](https://blockchain.com/btc/payment_request?address=1MTPGWkNfBtT8mTith1Rf91MS4kucUX4c1&amount=0.00011451&message=masterpass_donation&name=Iman)
