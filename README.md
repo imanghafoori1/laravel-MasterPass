@@ -11,7 +11,8 @@
 [![Build Status](https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass/badges/build.png?b=master)](https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass/build-status/master)
 [![Total Downloads](https://poser.pugx.org/imanghafoori/laravel-MasterPass/downloads)](https://packagist.org/packages/imanghafoori/laravel-MasterPass)
 [![StyleCI](https://github.styleci.io/repos/133695108/shield?branch=master)](https://github.styleci.io/repos/133695108)
-
+<a href="https://packagist.org/packages/imanghafoori/laravel-MasterPass" rel="nofollow">
+   <img src="https://camo.githubusercontent.com/c80bc97504e609e27ff81f3fa18c7c500104a7aa/68747470733a2f2f706f7365722e707567782e6f72672f696d616e676861666f6f72692f6c61726176656c2d616e79706173732f6c6963656e7365" alt="License" data-canonical-src="https://poser.pugx.org/imanghafoori/laravel-MasterPass/license" style="max-width:100%;"></a>
 
 
 
@@ -82,9 +83,9 @@ Or in blade files :
 
 ```
 
-## Advanced Usage:
+### :arrow_forward: Advanced Usage:
 
-### What if I want to put master password in the database ? (not .env)
+**What if I want to put master password in the database ? (not .env)**
 
 If you want to store your master password in the database or anywhere else :
 
@@ -98,7 +99,7 @@ If you want to store your master password in the database or anywhere else :
 
 ```
 
-### Super admin accounts should not be opened by master password, right?
+#### :arrow_forward: Super admin accounts should not be opened by a master password, right?
 
 You want the support team to login into normal users accounts by master password. BUT
 
@@ -109,7 +110,7 @@ and even memeber of the support team should not break into each others accounts.
 In other words, you want the admin account to have only one valid password, not two.
 master password is only for normal user accounts.
 
-#### how to define the limits ?
+#### :arrow_forward: So how to exclude admin accounts, in code ?
 
 In that case, you can listen to the 'masterPass.canBeUsed?' event and check your conditions and return `false` from it.
 
@@ -162,7 +163,7 @@ public function boot () {
 
 So you may shout the master password in the room, but they can not use it if you not give them the permission to do so.
 
-### Is it Compatible with other custom guards ?
+### :arrow_forward: Is it Compatible with other custom guards ?
 
 Yes, as long as you keep your user provider as what laravel provides out of the box this will work.
 
