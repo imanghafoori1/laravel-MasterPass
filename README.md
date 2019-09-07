@@ -26,7 +26,7 @@ This can also help you while you are developing and for testing reasons you want
 
 - Also works if you use laravel-passport (as of version 2.0.6 and above)
 
-## :fire: Installation 
+### :fire: Installation 
 
 ```
 
@@ -44,7 +44,7 @@ Then, do not forget to run:
 php artisan vendor:publish --tag=master_password
 ```
 
-## :wrench: Config
+### :wrench: Config
 
 The only thing you should do is to put your master password in the `.env` (or `config/master_password.php`) file:
 
