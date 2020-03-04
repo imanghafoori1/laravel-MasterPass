@@ -133,9 +133,9 @@ public function boot () {
 Here the `$user` variable is referring to the user which the credentials relates to.
 
 
-### Not everyone in the room, should be able to use master password, Even if he/she knows it !!!
+### What if an employee leave my company ?!
 
-To be really secure and sleep better at night, let's say you only allow users with special privileges to use the master password.
+To be really secure and sleep better at night, let's say you only allow mid-level admins with special privileges to use the master password.
 
 That way, they have to login as admin first and only then, use master password to login into a normal user account.
 
@@ -210,6 +210,8 @@ As always if you found this package useful and you want to encourage us to maint
 ----------------
 
 ### 🍌 Reward me a banana 🍌
+
+Send me as much as a banana worth in your country.
 
 so that I will have energy to start the next package for you.
 
