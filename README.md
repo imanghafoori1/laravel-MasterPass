@@ -135,9 +135,11 @@ Here the `$user` variable is referring to the user which the credentials relates
 
 ### What if an employee leave my company ?!
 
-To be really secure and sleep better at night, let's say you only allow mid-level admins with special privileges to use the master password.
+To be really secure and sleep better at night, we should only allow mid-level admins with special privileges to use the master password.
 
 That way, they have to login as admin first and only then, use master password to login into a normal user account.
+
+So when your employee leaves the company you remove his his permission or role to use master password.
 
 ```php
 
