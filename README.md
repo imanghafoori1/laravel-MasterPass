@@ -211,6 +211,12 @@ As always if you found this package useful and you want to encourage us to maint
 
 ----------------
 
+:gem: It automatically checks your laravel application
+
+- https://github.com/imanghafoori1/laravel-self-test
+
+----------------
+
 ### 🍌 Reward me a banana 🍌
 
 Send me as much as a banana worth in your country.
