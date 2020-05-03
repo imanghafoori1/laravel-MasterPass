@@ -4,15 +4,16 @@
 </h1>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/6961695/40175458-6e1cd190-59ed-11e8-92df-a281a5dc55b2.png" width="600">
-
-[![Latest Stable Version](https://poser.pugx.org/imanghafoori/laravel-MasterPass/v/stable)](https://packagist.org/packages/imanghafoori/laravel-MasterPass)
-<a href="https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass"><img src="https://img.shields.io/scrutinizer/g/imanghafoori1/laravel-MasterPass.svg?style=flat-square" alt="Quality Score"></img></a>
-[![Build Status](https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass/badges/build.png?b=master)](https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass/build-status/master)
-[![Total Downloads](https://poser.pugx.org/imanghafoori/laravel-MasterPass/downloads)](https://packagist.org/packages/imanghafoori/laravel-MasterPass)
-[![StyleCI](https://github.styleci.io/repos/133695108/shield?branch=master)](https://github.styleci.io/repos/133695108)
+  <a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/6961695/40175458-6e1cd190-59ed-11e8-92df-a281a5dc55b2.png"><img src="https://user-images.githubusercontent.com/6961695/40175458-6e1cd190-59ed-11e8-92df-a281a5dc55b2.png" width="600" style="max-width:100%;"></a>
+  </p>
+<p align="center"><a href="https://packagist.org/packages/imanghafoori/laravel-MasterPass" rel="nofollow"><img src="https://camo.githubusercontent.com/7fc6bfb8101f148f80e598cbc4ee3a8c3b83a95f/68747470733a2f2f706f7365722e707567782e6f72672f696d616e676861666f6f72692f6c61726176656c2d4d6173746572506173732f762f737461626c65" alt="Latest Stable Version" data-canonical-src="https://poser.pugx.org/imanghafoori/laravel-MasterPass/v/stable" style="max-width:100%;"></a>
+<a href="https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass" rel="nofollow"><img src="https://camo.githubusercontent.com/76b819e5240893862a016d3abd4c5afc75f899e5/68747470733a2f2f696d672e736869656c64732e696f2f7363727574696e697a65722f672f696d616e676861666f6f7269312f6c61726176656c2d4d6173746572506173732e7376673f7374796c653d666c61742d737175617265" alt="Quality Score" data-canonical-src="https://img.shields.io/scrutinizer/g/imanghafoori1/laravel-MasterPass.svg?style=flat-square" style="max-width:100%;"></a>
+<!--<a href="https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass/build-status/master" rel="nofollow"><img src="https://camo.githubusercontent.com/1d4cee425028e87f66fe74113bd938c19e872ebb/68747470733a2f2f7363727574696e697a65722d63692e636f6d2f672f696d616e676861666f6f7269312f6c61726176656c2d4d6173746572506173732f6261646765732f6275696c642e706e673f623d6d6173746572" alt="Build Status" data-canonical-src="https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass/badges/build.png?b=master" style="max-width:100%;"></a>-->
+<a href="https://packagist.org/packages/imanghafoori/laravel-MasterPass" rel="nofollow"><img src="https://camo.githubusercontent.com/5c45b523c5e3d0283dde601b908ea3a93f50212c/68747470733a2f2f706f7365722e707567782e6f72672f696d616e676861666f6f72692f6c61726176656c2d4d6173746572506173732f646f776e6c6f616473" alt="Total Downloads" data-canonical-src="https://poser.pugx.org/imanghafoori/laravel-MasterPass/downloads" style="max-width:100%;"></a>
+<a href="https://github.styleci.io/repos/133695108" rel="nofollow"><img src="https://camo.githubusercontent.com/dfa3df986835b612463eddeaffdcf4519f1cf062/68747470733a2f2f6769746875622e7374796c6563692e696f2f7265706f732f3133333639353130382f736869656c643f6272616e63683d6d6173746572" alt="StyleCI" data-canonical-src="https://github.styleci.io/repos/133695108/shield?branch=master" style="max-width:100%;"></a>
 <a href="https://packagist.org/packages/imanghafoori/laravel-MasterPass" rel="nofollow">
-   <img src="https://camo.githubusercontent.com/c80bc97504e609e27ff81f3fa18c7c500104a7aa/68747470733a2f2f706f7365722e707567782e6f72672f696d616e676861666f6f72692f6c61726176656c2d616e79706173732f6c6963656e7365" alt="License" data-canonical-src="https://poser.pugx.org/imanghafoori/laravel-MasterPass/license" style="max-width:100%;"></a>
+<img src="https://camo.githubusercontent.com/c80bc97504e609e27ff81f3fa18c7c500104a7aa/68747470733a2f2f706f7365722e707567782e6f72672f696d616e676861666f6f72692f6c61726176656c2d616e79706173732f6c6963656e7365" alt="License" style="max-width:100%;"></a></p>
+
 
 
 
