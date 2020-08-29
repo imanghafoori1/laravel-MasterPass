@@ -47,17 +47,19 @@ class UnitTest extends TestCase
     /** @test */
     public function validates_user_credentials_by_dynamic_master_pass()
     {
+        $password = 'masterpass';
+        $credentials = ['password' => $password];
+
         $user = factory(User::class)->create();
         $provider = new MasterPassDatabaseUserProvider($this->app->db->connection(), $this->app->hash, 'users');
 
-        Event::listen('masterPass.whatIsIt?', function () {
-            return 'masterpass';
-        });
+        Event::partialMock()->shouldReceive('dispatch')
+            ->with('masterPass.whatIsIt?', [$user, $credentials], true)
+            ->once()
+            ->andReturn($password);
 
-        $isValid = $provider->validateCredentials($user, ['password' => 'masterpass']);
+        $isValid = $provider->validateCredentials($user, $credentials);
+
         $this->assertTrue($isValid);
-
-        $isValid = $provider->validateCredentials($user, ['password' => 'not_masterpass']);
-        $this->assertFalse($isValid);
     }
 }
