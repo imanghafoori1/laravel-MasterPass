@@ -2,7 +2,6 @@
 
 namespace Imanghafoori\MasterPass\Tests;
 
-use Illuminate\Support\Facades\Route;
 use Imanghafoori\MassterPass\Models\User;
 use Imanghafoori\MasterPass\MasterPassServiceProvider;
 
@@ -19,15 +18,5 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->withFactories(__DIR__.'/../database/factories');
-//        $this->artisan('db:seed');
-
-        $this->defineDefaultRoute();
-    }
-
-    private function defineDefaultRoute()
-    {
-        Route::get('/', function () {
-            return User::select('name')->filter()->get();
-        });
     }
 }
