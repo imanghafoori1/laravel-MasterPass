@@ -1,6 +1,8 @@
 vendor/
 node_modules/
 npm-debug.log
+.idea
+composer.lock
 
 # Laravel 4 specific
 bootstrap/compiled.php
@@ -18,3 +20,6 @@ Homestead.json
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
+
+# unit tests cache
+.phpunit.result.cache
