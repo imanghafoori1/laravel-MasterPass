@@ -2,7 +2,6 @@
 
 namespace Imanghafoori\MasterPass\Tests;
 
-use Imanghafoori\MassterPass\Models\User;
 use Imanghafoori\MasterPass\MasterPassServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase

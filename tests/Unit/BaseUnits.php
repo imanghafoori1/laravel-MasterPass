@@ -5,7 +5,7 @@ namespace Imanghafoori\MasterPass\Tests\Unit;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
 use Imanghafoori\MasterPass\MasterPassDatabaseUserProvider;
-use Imanghafoori\MasterPass\Models\User;
+use Imanghafoori\MasterPass\Tests\Stubs\UserModel as User;
 use Imanghafoori\MasterPass\Tests\TestCase;
 
 class BaseUnits extends TestCase

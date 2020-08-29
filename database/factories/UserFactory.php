@@ -3,7 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use Faker\Generator as Faker;
-use Imanghafoori\MasterPass\Models\User;
+use Imanghafoori\MasterPass\Tests\Stubs\UserModel as User;
 
 $factory->define(User::class, function (Faker $faker, $parameters) {
     return [

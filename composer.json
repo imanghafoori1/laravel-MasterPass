@@ -19,7 +19,6 @@
             "database"
         ],
         "psr-4": {
-            "Imanghafoori\\MasterPass\\Models\\": "models/",
             "Imanghafoori\\MasterPass\\Tests\\": "tests/"
         }
     },
