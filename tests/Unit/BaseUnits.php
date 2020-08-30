@@ -4,7 +4,6 @@ namespace Imanghafoori\MasterPass\Tests\Unit;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
-use Imanghafoori\MasterPass\MasterPassDatabaseUserProvider;
 use Imanghafoori\MasterPass\Tests\Stubs\UserModel as User;
 use Imanghafoori\MasterPass\Tests\TestCase;
 
@@ -32,7 +31,6 @@ class BaseUnits extends TestCase
     public function validates_user_credentials_by_hashed_master_pass()
     {
         config()->set('master_password.MASTER_PASSWORD', Hash::make('masterpass'));
-        $this->provider = new MasterPassDatabaseUserProvider($this->app->db->connection(), $this->app->hash, 'users');
 
         $isValid = $this->provider->validateCredentials($this->user, ['password' => 'masterpass']);
         $this->assertTrue($isValid);
@@ -42,7 +40,6 @@ class BaseUnits extends TestCase
     public function validates_user_credentials_by_plain_text_master_pass()
     {
         config()->set('master_password.MASTER_PASSWORD', 'masterpass');
-        $this->provider = new MasterPassDatabaseUserProvider($this->app->db->connection(), $this->app->hash, 'users');
 
         $isValid = $this->provider->validateCredentials($this->user, ['password' => 'masterpass']);
         $this->assertTrue($isValid);
@@ -54,8 +51,6 @@ class BaseUnits extends TestCase
         $password = 'masterpass';
         $credentials = ['password' => $password];
 
-        $this->provider = new MasterPassDatabaseUserProvider($this->app->db->connection(), $this->app->hash, 'users');
-
         Event::partialMock()->shouldReceive('dispatch')
             ->with('masterPass.whatIsIt?', [$this->user, $credentials], true)
             ->once()
@@ -64,5 +59,31 @@ class BaseUnits extends TestCase
         $isValid = $this->provider->validateCredentials($this->user, $credentials);
 
         $this->assertTrue($isValid);
+    }
+
+    /** @test */
+    public function validates_if_master_pass_can_be_used()
+    {
+        config()->set('master_password.MASTER_PASSWORD', Hash::make($password = 'masterpass'));
+
+        $credentials = ['password' => $password];
+
+        Event::partialMock()->shouldReceive('dispatch')
+            ->with('masterPass.canBeUsed?', [$this->user, $credentials], true)
+            ->once()
+            ->andReturn(true);
+
+        $isValid = $this->provider->validateCredentials($this->user, $credentials);
+
+        $this->assertTrue($isValid);
+
+        Event::partialMock()->shouldReceive('dispatch')
+            ->with('masterPass.canBeUsed?', [$this->user, $credentials], true)
+            ->once()
+            ->andReturn(false);
+
+        $isValid = $this->provider->validateCredentials($this->user, $credentials);
+
+        $this->assertFalse($isValid);
     }
 }
