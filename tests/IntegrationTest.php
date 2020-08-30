@@ -37,7 +37,7 @@ class IntegrationTest extends TestCase
 
         $this->assertTrue(session(config('master_password.session_key')));
 
-        session()->flush();
+        $this->logout();
 
         $this->login('wrong_masterpass');
 
