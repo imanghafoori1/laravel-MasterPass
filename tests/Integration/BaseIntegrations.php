@@ -1,11 +1,12 @@
 <?php
 
-namespace Imanghafoori\MasterPass\Tests;
+namespace Imanghafoori\MasterPass\Tests\Integration;
 
 use Illuminate\Support\Facades\Hash;
 use Imanghafoori\MasterPass\Tests\Stubs\UserModel as User;
+use Imanghafoori\MasterPass\Tests\TestCase;
 
-class IntegrationTest extends TestCase
+class BaseIntegrations extends TestCase
 {
     private $user;
 
@@ -18,11 +19,6 @@ class IntegrationTest extends TestCase
         config()->set('auth.guards.custom', [
             'driver' => 'session',
             'provider' => 'users',
-        ]);
-
-        config()->set('auth.providers.users', [
-            'driver' => 'eloquentMasterPassword',
-            'model' =>  User::class
         ]);
 
         config()->set('master_password.MASTER_PASSWORD', Hash::make(self::MASTER_PASS));
