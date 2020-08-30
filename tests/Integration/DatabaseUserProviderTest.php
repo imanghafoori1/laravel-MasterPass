@@ -15,7 +15,7 @@ class DatabaseUserProviderTest extends BaseIntegrations
         config()->set('auth.providers.users', [
             'driver' => 'databaseMasterPassword',
             'model' =>  User::class,
-            'table' => 'users'
+            'table' => 'users',
         ]);
     }
 }
