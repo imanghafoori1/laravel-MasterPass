@@ -1,0 +1,3 @@
+@isLoggedInByMasterPass
+logged in
+@endif
