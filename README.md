@@ -72,11 +72,11 @@ You may also need to check whether the user is logged with a real password or a 
 $bool = Auth::isLoggedInByMasterPass();
 
 ```
-Or in blade files :
+Or in blade files you can use our directives :
 
 ```php
 
-@if(Auth::isLoggedInByMasterPass())
+@isLoggedInByMasterPass
 
      Your are here by master password.
 
