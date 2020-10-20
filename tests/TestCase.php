@@ -6,7 +6,6 @@ use Imanghafoori\MasterPass\MasterPassServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
-
     protected $compiler;
 
     protected function getPackageProviders($app)
