@@ -2,8 +2,10 @@
 
 namespace Imanghafoori\MasterPass\Tests\Unit;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Imanghafoori\MasterPass\Tests\Stubs\UserModel as User;
 use Imanghafoori\MasterPass\Tests\TestCase;
 
@@ -86,4 +88,34 @@ class BaseUnits extends TestCase
 
         $this->assertFalse($isValid);
     }
+
+    /** @test **/
+    public function blade_directive_style()
+    {
+        $this->assertEquals("<?php if(Auth::isLoggedInByMasterPass('foo')): ?>", $this->compiler->compileString("@isLoggedInByMasterPass('foo')"));
+        $this->assertEquals("<?php if(Auth::isLoggedInByMasterPass()): ?>", $this->compiler->compileString("@isLoggedInByMasterPass"));
+    }
+
+    /** @test **/
+    public function blade_directive_rendering()
+    {
+        config()->set('view.paths', [
+            __DIR__.'/views',
+        ]);
+
+        // when isLoggedInByMasterPass returns true
+        Auth::shouldReceive('isLoggedInByMasterPass')
+            ->once()
+            ->andReturn(true);
+        $view = view('directive')->render();
+        $this->assertTrue(Str::contains($view, 'logged in'));
+
+        // when isLoggedInByMasterPass returns false
+        Auth::shouldReceive('isLoggedInByMasterPass')
+            ->once()
+            ->andReturn(false);
+        $view = view('directive')->render();
+        $this->assertFalse(Str::contains($view, 'logged in'));
+    }
+
 }
