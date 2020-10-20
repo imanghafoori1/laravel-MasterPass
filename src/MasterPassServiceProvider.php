@@ -79,9 +79,8 @@ class MasterPassServiceProvider extends ServiceProvider
 
     private function registerDirectives()
     {
-        Blade::directive('isLoggedInByMasterPass', function ($guard = null){
+        Blade::directive('isLoggedInByMasterPass', function ($guard = null) {
             return "<?php if(Auth::isLoggedInByMasterPass({$guard})): ?>";
         });
     }
-
 }
