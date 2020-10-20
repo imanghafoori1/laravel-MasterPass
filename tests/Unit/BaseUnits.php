@@ -93,7 +93,7 @@ class BaseUnits extends TestCase
     public function blade_directive_style()
     {
         $this->assertEquals("<?php if(Auth::isLoggedInByMasterPass('foo')): ?>", $this->compiler->compileString("@isLoggedInByMasterPass('foo')"));
-        $this->assertEquals("<?php if(Auth::isLoggedInByMasterPass()): ?>", $this->compiler->compileString("@isLoggedInByMasterPass"));
+        $this->assertEquals('<?php if(Auth::isLoggedInByMasterPass()): ?>', $this->compiler->compileString('@isLoggedInByMasterPass'));
     }
 
     /** @test **/
@@ -117,5 +117,4 @@ class BaseUnits extends TestCase
         $view = view('directive')->render();
         $this->assertFalse(Str::contains($view, 'logged in'));
     }
-
 }
