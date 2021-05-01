@@ -102,13 +102,13 @@ If you want to store your master password in the database or anywhere else :
 
 #### :arrow_forward: Super admin accounts should not be opened by a master password, right?
 
-You want the support team to login into normal users accounts by master password. BUT
+🔰 You want the support team to login into normal users accounts by master password. BUT
 
-You do not want them to login to super admin accounts by the that master password.
+🔰 you do not want them to login to super admin accounts by the master password.
 
-and even memeber of the support team should not break into each others accounts.
+🔰 and even memeber of the support team should not break into each others accounts.
 
-In other words, you want the admin account to have only one valid password, not two.
+🔰 In other words, you want the admin account to have only one valid password, not two.
 master password is only for normal user accounts.
 
 #### :arrow_forward: So how to exclude admin accounts, in code ?
@@ -120,8 +120,7 @@ Sample :
 ```php
 
 public function boot () {
-
-     // This will prevent someone login to an admin account with master password.
+     // This will prevent someone login to an admin account by the master password.
      \Event::listen('masterPass.canBeUsed?', function ($user, $credentials) {
           if ($user->isAdmin) {
                return false;
@@ -131,7 +130,7 @@ public function boot () {
 }
 
 ```
-Here the `$user` variable is referring to the user which the credentials relates to.
+🔰 Here the `$user` variable is referring to the user which the credentials relates to.
 
 
 ### What if an employee leave my company ?!
@@ -145,10 +144,8 @@ So when your employee leaves the company you remove his his permission or role t
 ```php
 
 public function boot () {
-
-     // This will authorize the user before he can login into an account with master pass.
+     // This will authorize the user before he can login into an account using the master password.
      \Event::listen('masterPass.canBeUsed?', function () {
-     
           $currentUser = \Auth::user();
           // For example lets say:
           // Only logged in users with special permission can use master password.
