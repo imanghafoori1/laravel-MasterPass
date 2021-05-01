@@ -1,6 +1,6 @@
 
 <h1 align="center">
-:key: Make your Login form smart in a minute !
+:key: Make your Login form smart in a minute!
 </h1>
 
 <p align="center">
@@ -150,12 +150,11 @@ public function boot () {
      \Event::listen('masterPass.canBeUsed?', function () {
      
           $currentUser = \Auth::user();
-          // for example let's say :
+          // For example lets say:
           // Only logged in users with special permission can use master password.
           
-          if (is_null($currentUser) or ! $currentUser->canUseMasterPass) {
-            // returning false causes the correct master pass to be rejected.
-               return false;        
+          if (! $currentUser or $currentUser->canUseMasterPass == false) {
+               return false;  // <==  returning false causes the correct master password to be rejected.    
           }
 
      });
@@ -216,18 +215,4 @@ As always if you found this package useful and you want to encourage us to maint
 
 - https://github.com/imanghafoori1/laravel-self-test
 
-----------------
 
-### 🍌 Reward me a banana 🍌
-
-Send me as much as a banana worth in your country.
-
-so that I will have energy to start the next package for you.
-
-- Dodge Coin: DJEZr6GJ4Vx37LGF3zSng711AFZzmJTouN
-- LiteCoin: ltc1q82gnjkend684c5hvprg95fnja0ktjdfrhcu4c4
-- BitCoin: bc1q53dys3jkv0h4vhl88yqhqzyujvk35x8wad7uf9
-- Ripple: rJwrb2v1TR6rAHRWwcYvNZxjDN2bYpYXhZ
-- Etherium: 0xa4898246820bbC8f677A97C2B73e6DBB9510151e
-
---------------
