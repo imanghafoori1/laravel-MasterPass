@@ -72,7 +72,7 @@ You may also need to check whether the user is logged with a real password or a 
 $bool = Auth::isLoggedInByMasterPass();
 
 ```
-Or in blade files you can use our directives :
+Or in blade files you can use our directives:
 
 ```php
 
@@ -86,7 +86,7 @@ Or in blade files you can use our directives :
 
 ### :arrow_forward: Advanced Usage:
 
-**What if I want to put master password in the database ? (not .env)**
+**What if I want to put master password in the database? (not .env)**
 
 If you want to store your master password in the database or anywhere else :
 
@@ -115,7 +115,7 @@ master password is only for normal user accounts.
 
 In that case, you can listen to the 'masterPass.canBeUsed?' event and check your conditions and return `false` from it.
 
-Sample :
+Sample:
 
 ```php
 
@@ -133,7 +133,7 @@ public function boot () {
 🔰 Here the `$user` variable is referring to the user which the credentials relates to.
 
 
-### What if an employee leave my company ?!
+### What if an employee leave my company?!
 
 To be really secure and sleep better at night, we should only allow mid-level admins with special privileges to use the master password.
 
@@ -162,7 +162,7 @@ public function boot () {
 
 So you may shout the master password in the room, but they can not use it if you not give them the permission to do so.
 
-### :arrow_forward: Is it Compatible with other custom guards ?
+### :arrow_forward: Is it Compatible with other custom guards?
 
 Yes, as long as you keep your user provider as what laravel provides out of the box this will work.
 
@@ -202,7 +202,7 @@ As always if you found this package useful and you want to encourage us to maint
 
 ------------
 
-:gem: Authorization and validation is now very easy with hey-man package !!!
+:gem: Authorization and validation is now very easy with hey-man package!!!
 
 - https://github.com/imanghafoori1/laravel-heyman
 
