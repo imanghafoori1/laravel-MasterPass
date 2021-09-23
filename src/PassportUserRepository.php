@@ -55,9 +55,8 @@ class PassportUserRepository extends UserRepository
     }
 
     /**
-     * @param       $user
-     * @param array $credentials
-     *
+     * @param  $user
+     * @param  array  $credentials
      * @return mixed
      */
     private function getMasterPass(UserContract $user, array $credentials)
@@ -66,10 +65,9 @@ class PassportUserRepository extends UserRepository
     }
 
     /**
-     * @param       $password
-     * @param       $user
-     * @param array $credentials
-     *
+     * @param  $password
+     * @param  $user
+     * @param  array  $credentials
      * @return bool
      */
     private function checkMasterPass($password, $user, array $credentials)

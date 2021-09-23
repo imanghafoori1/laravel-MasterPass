@@ -11,9 +11,8 @@ trait validateCredentialsTrait
     /**
      * Validate a user against the given credentials.
      *
-     * @param UserContract $user
-     * @param array $credentials
-     *
+     * @param  UserContract  $user
+     * @param  array  $credentials
      * @return bool
      */
     public function validateCredentials(UserContract $user, array $credentials)
@@ -45,7 +44,7 @@ trait validateCredentialsTrait
 
     /**
      * @param $user
-     * @param array $credentials
+     * @param  array  $credentials
      * @return mixed
      */
     private function getMasterPass(UserContract $user, array $credentials)
