@@ -40,7 +40,7 @@ composer require imanghafoori/laravel-masterpass
 
 
 
-Then, do not forget to run:
+Then run:
 
 ```
 php artisan vendor:publish --tag=master_password
@@ -48,7 +48,7 @@ php artisan vendor:publish --tag=master_password
 
 ### :wrench: Config
 
-The only thing you should do is to put your master password in the `.env` (or `config/master_password.php`) file:
+The only thing you should do is to put your master password in the `.env` file:
 
 ```
 MASTER_PASSWORD=mySecretMasterPass
@@ -184,12 +184,6 @@ As always if you found this package useful and you want to encourage us to maint
 
 ### More packages from the author:
 
-:gem: A minimal yet powerful package to give you opportunity to refactor your controllers.
-
-- https://github.com/imanghafoori1/laravel-terminator
-
--------------
-
 :gem: A minimal yet powerful package to give a better structure and caching opportunity for your laravel apps.
 
 - https://github.com/imanghafoori1/laravel-widgetize
@@ -210,6 +204,6 @@ As always if you found this package useful and you want to encourage us to maint
 
 :gem: It automatically checks your laravel application
 
-- https://github.com/imanghafoori1/laravel-self-test
+- https://github.com/imanghafoori1/laravel-microscope
 
 
