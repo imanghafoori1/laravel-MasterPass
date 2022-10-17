@@ -1,6 +1,6 @@
 
 <h1 align="center">
-:key: Make your Login form smart in a minute!
+:key: Make your login form smart in a minute.
 </h1>
 
 <p align="center">
