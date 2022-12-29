@@ -14,8 +14,6 @@ class MasterPassServiceProvider extends ServiceProvider
     {
         $this->publishes([__DIR__.'/config/master_password.php' => config_path('master_password.php')], 'master_password');
 
-        $this->defineIsUsingMasterPass();
-
         $this->registerDirectives();
         Event::listen(Logout::class, function () {
             session()->remove(config('master_password.session_key'));
@@ -36,6 +34,10 @@ class MasterPassServiceProvider extends ServiceProvider
         if (config('master_password.MASTER_PASSWORD')) {
             $this->changeUsersDriver();
         }
+
+        $this->app->booted(function () {
+            $this->defineIsUsingMasterPass();
+        });
     }
 
     /**
