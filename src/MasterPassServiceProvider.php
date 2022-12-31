@@ -3,6 +3,7 @@
 namespace Imanghafoori\MasterPass;
 
 use Illuminate\Auth\Events\Logout;
+use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Event;
@@ -72,9 +73,13 @@ class MasterPassServiceProvider extends ServiceProvider
 
     private function defineIsUsingMasterPass()
     {
-        Auth::macro('isLoggedInByMasterPass', function () {
-            return session(config('master_password.session_key'), false);
-        });
+        foreach (array_keys(config('auth.guards')) as $guard) {
+            if (($authGuard = Auth::guard($guard)) instanceof StatefulGuard) {
+                $authGuard->macro('isLoggedInByMasterPass', function () {
+                    return session(config('master_password.session_key'), false);
+                });
+            }
+        }
     }
 
     private function registerDirectives()
