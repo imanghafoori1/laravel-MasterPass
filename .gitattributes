@@ -9,7 +9,7 @@
 /tests                   export-ignore
 /.editorconfig           export-ignore
 /.php-cs-fixer.dist.php  export-ignore
-/UPGRADING.md            export-ignore
+/.styleci.yml            export-ignore
 /.scrutinizer.yml        export-ignore
 /database                export-ignore
 /README.md               export-ignore
