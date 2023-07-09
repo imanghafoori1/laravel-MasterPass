@@ -6,7 +6,7 @@ use Illuminate\Auth\Events\Login;
 use Illuminate\Contracts\Auth\Authenticatable as UserContract;
 use Illuminate\Support\Facades\Event;
 
-trait validateCredentialsTrait
+trait ValidateCredentialsTrait
 {
     /**
      * Validate a user against the given credentials.
