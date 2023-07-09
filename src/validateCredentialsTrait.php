@@ -43,7 +43,7 @@ trait validateCredentialsTrait
     }
 
     /**
-     * @param $user
+     * @param  $user
      * @param  array  $credentials
      * @return mixed
      */
