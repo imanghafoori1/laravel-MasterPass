@@ -13,9 +13,7 @@
 <a href="https://github.styleci.io/repos/133695108" rel="nofollow"><img src="https://camo.githubusercontent.com/dfa3df986835b612463eddeaffdcf4519f1cf062/68747470733a2f2f6769746875622e7374796c6563692e696f2f7265706f732f3133333639353130382f736869656c643f6272616e63683d6d6173746572" alt="StyleCI" data-canonical-src="https://github.styleci.io/repos/133695108/shield?branch=master" style="max-width:100%;"></a>
 <a href="https://packagist.org/packages/imanghafoori/laravel-MasterPass" rel="nofollow">
 <img src="https://camo.githubusercontent.com/c80bc97504e609e27ff81f3fa18c7c500104a7aa/68747470733a2f2f706f7365722e707567782e6f72672f696d616e676861666f6f72692f6c61726176656c2d616e79706173732f6c6963656e7365" alt="License" style="max-width:100%;"></a>
-
-[![Imports](https://github.com/imanghafoori1/laravel-masterpass/actions/workflows/imports.yml/badge.svg?branch=master)](https://github.com/imanghafoori1/laravel-masterpass/actions/workflows/imports.yml)
-
+<a href="https://github.com/imanghafoori1/laravel-masterpass/actions/workflows/imports.yml"><img src="https://github.com/imanghafoori1/laravel-masterpass/actions/workflows/imports.yml/badge.svg?branch=master" alt="Imports" style="max-width: 100%;"></a>
 </p>
 
 ### Built with :heart: for every smart laravel developer
