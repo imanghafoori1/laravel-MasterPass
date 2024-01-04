@@ -17,14 +17,14 @@
 <a href="https://github.com/imanghafoori1/laravel-masterpass/actions/workflows/imports.yml"><img src="https://github.com/imanghafoori1/laravel-masterpass/actions/workflows/imports.yml/badge.svg?branch=master" alt="Imports" style="max-width: 100%;"></a>
 </p>
 
-### Built with :heart: for every smart laravel developer
+### Built with :heart: for every smart Laravel developer
 
 
 Helps you set a master password in .env file and login into any account with that, to impersonate your users.
 
 This means that each account will have 2 valid passwords. The original one and the master password.
 
-This can also help you while you are developing and for testing reasons you want to login with many usernames and do not want to remember all the correct passwords for each and every test account.
+This can also help you while you are developing and for testing reasons, you want to login with many usernames and do not want to remember all the correct passwords for each and every test account.
 
 - Also works if you use laravel-passport (as of version 2.0.6 and above)
 
@@ -62,10 +62,10 @@ MASTER_PASSWORD=$2y$10$vMAcHBzLck9YDWjEwBN9pelWg5RgZfjwoayqggmy41eeqTLGq59gS
 
 Both of the options will work just fine.
 
-- If master password can't be read from the `config/master_password.php` file, this package will be totally disabled and will do nothing.
+- If the master password can't be read from the `config/master_password.php` file, this package will be totally disabled and will do nothing.
 
 
-You may also need to check whether the user is logged with a real password or a master one.
+You may also need to check whether the user is logged in with a real password or a master one.
 
 ```php
 
@@ -102,25 +102,25 @@ If you want to store your master password in the database or anywhere else :
 
 #### :arrow_forward: Super admin accounts should not be opened by a master password, right?
 
-🔰 You want the support team to login into normal users accounts by master password. BUT
+🔰 You want the support team to login into normal users' accounts by master password. BUT
 
 🔰 you do not want them to login to super admin accounts by the master password.
 
-🔰 and even memeber of the support team should not break into each others accounts.
+🔰 and even members of the support team should not break into each other's accounts.
 
 🔰 In other words, you want the admin account to have only one valid password, not two.
-master password is only for normal user accounts.
+a master password is only for normal user accounts.
 
-#### :arrow_forward: So how to exclude admin accounts, in code ?
+#### :arrow_forward: So how to exclude admin accounts, in code?
 
-In that case, you can listen to the 'masterPass.canBeUsed?' event and check your conditions and return `false` from it.
+In that case, you can listen to the 'masterPass.canBeUsed?' event check your conditions, and return `false` from it.
 
 Sample:
 
 ```php
 
 public function boot () {
-     // This will prevent someone login to an admin account by the master password.
+     // This will prevent someone logging to an admin account with the master password.
      \Event::listen('masterPass.canBeUsed?', function ($user, $credentials) {
           if ($user->isAdmin) {
                return false;
@@ -130,16 +130,16 @@ public function boot () {
 }
 
 ```
-🔰 Here the `$user` variable is referring to the user which the credentials relates to.
+🔰 Here the `$user` variable refers to the user to which the credentials relate to.
 
 
-### What if an employee leave my company?!
+### What if an employee leaves my company?!
 
 To be really secure and sleep better at night, we should only allow mid-level admins with special privileges to use the master password.
 
-That way, they have to login as admin first and only then, use master password to login into a normal user account.
+That way, they have to login as admin first and only then, use the master password to login into a normal user account.
 
-So when your employee leaves the company you remove his his permission or role to use master password.
+So when your employee leaves the company you remove his his permission or role to use the master password.
 
 ```php
 
@@ -164,7 +164,7 @@ So you may shout the master password in the room, but they can not use it if you
 
 ### :arrow_forward: Is it Compatible with other custom guards?
 
-Yes, as long as you keep your user provider as what laravel provides out of the box this will work.
+Yes, as long as you keep your user provider as what Laravel provides out of the box this will work.
 
 Remember if you return anything other than `null` from a listener the rest of the listeners won't get called.
 
@@ -184,13 +184,13 @@ As always if you found this package useful and you want to encourage us to maint
 
 ### More packages from the author:
 
-:gem: A minimal yet powerful package to give a better structure and caching opportunity for your laravel apps.
+:gem: A minimal yet powerful package to give a better structure and caching opportunity for your Laravel apps.
 
 - https://github.com/imanghafoori1/laravel-widgetize
 
 ------------
 
-:gem: Functional programming concepts ported into laravel to avoid null reference errors.
+:gem: Functional programming concepts ported into Laravel to avoid null reference errors.
 
 - https://github.com/imanghafoori1/laravel-nullable
 
