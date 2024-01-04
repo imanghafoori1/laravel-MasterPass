@@ -14,7 +14,7 @@ class EloquentUserProviderTest extends BaseIntegrations
 
         config()->set('auth.providers.users', [
             'driver' => 'eloquentMasterPassword',
-            'model' =>  User::class,
+            'model' => User::class,
         ]);
     }
 }
