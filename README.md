@@ -6,15 +6,16 @@
 <p align="center">
   <a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/6961695/40175458-6e1cd190-59ed-11e8-92df-a281a5dc55b2.png"><img src="https://user-images.githubusercontent.com/6961695/40175458-6e1cd190-59ed-11e8-92df-a281a5dc55b2.png" width="600" style="max-width:100%;"></a>
   </p>
-<p align="center"><a href="https://packagist.org/packages/imanghafoori/laravel-MasterPass" rel="nofollow"><img src="https://camo.githubusercontent.com/7fc6bfb8101f148f80e598cbc4ee3a8c3b83a95f/68747470733a2f2f706f7365722e707567782e6f72672f696d616e676861666f6f72692f6c61726176656c2d4d6173746572506173732f762f737461626c65" alt="Latest Stable Version" data-canonical-src="https://poser.pugx.org/imanghafoori/laravel-MasterPass/v/stable" style="max-width:100%;"></a>
+<p align="center">
 
-[![Code Quality](https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/imanghafoori1/laravel-MasterPass/?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9d6be7b057103cb14410/maintainability)](https://codeclimate.com/github/imanghafoori1/laravel-masterpass/maintainability)
+[![Imports](https://github.com/imanghafoori1/laravel-masterpass/actions/workflows/imports.yml/badge.svg?branch=master)](https://github.com/imanghafoori1/laravel-masterpass/actions/workflows/imports.yml)
+[![StyleCI](https://github.styleci.io/repos/139709518/shield?branch=master)](https://github.styleci.io/repos/139709518)
+[![Latest Stable Version](https://poser.pugx.org/imanghafoori/laravel-masterpass/v/stable)](https://packagist.org/packages/imanghafoori/laravel-masterpass)
+[![Daily Downloads](https://poser.pugx.org/imanghafoori/laravel-masterpass/d/daily)](https://packagist.org/packages/imanghafoori/laravel-masterpass)
+[![Total Downloads](https://poser.pugx.org/imanghafoori/laravel-masterpass/downloads)](https://packagist.org/packages/imanghafoori/laravel-masterpass)
+[![Software License](https://img.shields.io/badge/license-MIT-blue.svg?style=round-square)](LICENSE.md)
 
-<a href="https://packagist.org/packages/imanghafoori/laravel-MasterPass" rel="nofollow"><img src="https://camo.githubusercontent.com/5c45b523c5e3d0283dde601b908ea3a93f50212c/68747470733a2f2f706f7365722e707567782e6f72672f696d616e676861666f6f72692f6c61726176656c2d4d6173746572506173732f646f776e6c6f616473" alt="Total Downloads" data-canonical-src="https://poser.pugx.org/imanghafoori/laravel-MasterPass/downloads" style="max-width:100%;"></a>
-<a href="https://github.styleci.io/repos/133695108" rel="nofollow"><img src="https://camo.githubusercontent.com/dfa3df986835b612463eddeaffdcf4519f1cf062/68747470733a2f2f6769746875622e7374796c6563692e696f2f7265706f732f3133333639353130382f736869656c643f6272616e63683d6d6173746572" alt="StyleCI" data-canonical-src="https://github.styleci.io/repos/133695108/shield?branch=master" style="max-width:100%;"></a>
-<a href="https://packagist.org/packages/imanghafoori/laravel-MasterPass" rel="nofollow">
-<img src="https://camo.githubusercontent.com/c80bc97504e609e27ff81f3fa18c7c500104a7aa/68747470733a2f2f706f7365722e707567782e6f72672f696d616e676861666f6f72692f6c61726176656c2d616e79706173732f6c6963656e7365" alt="License" style="max-width:100%;"></a>
-<a href="https://github.com/imanghafoori1/laravel-masterpass/actions/workflows/imports.yml"><img src="https://github.com/imanghafoori1/laravel-masterpass/actions/workflows/imports.yml/badge.svg?branch=master" alt="Imports" style="max-width: 100%;"></a>
 </p>
 
 ### Built with :heart: for every smart Laravel developer
@@ -86,7 +87,7 @@ Or in blade files you can use our directives:
 
 ### :arrow_forward: Advanced Usage:
 
-**What if I want to put master password in the database? (not .env)**
+**What if I want to put the master password in the database? (not .env)**
 
 If you want to store your master password in the database or anywhere else :
 
@@ -196,7 +197,7 @@ As always if you found this package useful and you want to encourage us to maint
 
 ------------
 
-:gem: Authorization and validation is now very easy with hey-man package!!!
+:gem: Authorization and validation are now very easy with hey-man package!!!
 
 - https://github.com/imanghafoori1/laravel-heyman
 
