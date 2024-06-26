@@ -77,9 +77,12 @@ class MasterPassServiceProvider extends ServiceProvider
     {
         foreach (array_keys(config('auth.guards')) as $guard) {
             if (($authGuard = Auth::guard($guard)) instanceof Guard) {
-                $authGuard->macro('isLoggedInByMasterPass', function () {
-                    return session(config('master_password.session_key'), false);
-                });
+                $guardClass = get_class($authGuard);
+                if (method_exists($guardClass, 'macro')) {
+                    $guardClass::macro('isLoggedInByMasterPass', function () {
+                        return session(config('master_password.session_key'), false);
+                    });
+                }
             }
         }
     }
