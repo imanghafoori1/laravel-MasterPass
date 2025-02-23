@@ -62,11 +62,11 @@ class MasterPassServiceProvider extends ServiceProvider
 
     private function registerAuthProviders()
     {
-        \Auth::provider('eloquentMasterPassword', function ($app, array $config) {
+        Auth::provider('eloquentMasterPassword', function ($app, array $config) {
             return new MasterPassEloquentUserProvider($app['hash'], $config['model']);
         });
 
-        \Auth::provider('databaseMasterPassword', function ($app, array $config) {
+        Auth::provider('databaseMasterPassword', function ($app, array $config) {
             $connection = $app['db']->connection();
 
             return new MasterPassDatabaseUserProvider($connection, $app['hash'], $config['table']);
